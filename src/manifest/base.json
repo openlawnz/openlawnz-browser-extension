@@ -1,0 +1,14 @@
+{
+	"manifest_version": 2,
+	"name": "OpenLaw NZ Legislation helper",
+	"description":
+		"Access the OpenLaw NZ database from within legislation.govt.nz",
+	"icons": {
+		"16": "img/logo.png",
+		"128": "img/logo.png"
+	},
+	"permissions": ["contextMenus", "activeTab"],
+	"options_ui": {
+		"page": "options.html"
+	}
+}

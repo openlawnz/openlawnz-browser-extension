@@ -1,0 +1,175 @@
+/* Specificity */
+#contentContainer #content div.legislationActions li.contents {
+    width: 188px;
+    margin-right: 50px;
+}
+
+/* Specificity */
+#content div.legislationActions li#openLawNZListItem {
+    position: absolute;
+    left: 188px;
+    width: 50px;
+    background-position: 0 -50px;
+    cursor: pointer;
+}
+
+#openLawNZListItem:before {
+    position: absolute;
+    top: 0;
+    left: -6px;
+    content: " ";
+    display: block;
+    height: 100%;
+    width: 6px;
+    background: inherit;
+    background-position: -232px -50px;
+    z-index: 2;
+    
+}
+
+#openLawNZListItem:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: " ";
+    display: block;
+    height: 100%;
+    width: 42px;
+    background: inherit;
+    background-position: -196px -50px;
+    z-index: 2;
+}
+
+#openLawNZListItem > span {
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background-size: 28px;
+    background-color: #fff;
+    pointer-events: none;
+}
+
+#openLawNZListItem > span:before {
+    position: absolute;
+    z-index: 2;
+    top: -1.85px;
+    left: -1.85px;
+    border-radius: 4px;
+    background: #fff;
+    content: " ";
+    width: 11px;
+    height: 11px;
+    display: block;
+}
+
+#openLawNZListItem > span:after {
+    position: absolute;
+    z-index: 2;
+    bottom: -1.85px;
+    right: -1.85px;
+    border-radius: 4px;
+    background: #fff;
+    content: " ";
+    width: 11px;
+    height: 11px;
+    display: block;
+}
+
+#openLawNZListItem > span > span {
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: transparent url('../img/logo.png') no-repeat center center;
+    background-size: 28px;
+    pointer-events: none;
+
+}
+
+#content div.legislationActions li.contents:hover + #openLawNZListItem:before {
+    background-position-y: -100px;
+}
+
+#openLawNZListItem:hover, #openLawNZListItem:hover:after {
+    background-position-y: -100px !important;
+}
+
+#openLawNZListItem:hover span, #openLawNZListItem:hover span:after, #openLawNZListItem:hover span:before {
+    background-color: #d9dce64e;
+    mix-blend-mode: multiply;
+}
+
+#openLawNZListItem-dialog {
+    border: 3px solid #dbe5f6;
+    padding: 10px;
+    min-width: 400px;
+    min-height: 200px;
+    position: relative;
+    background: #eeeef6;
+    font-size: 12px;
+}
+
+#openLawNZListItem-dialog:after {
+    border: 2px solid #e6f0f7;
+    border-radius: 1px;
+    position: absolute;
+    display: block;
+    content: " ";
+    top: 0px;
+    left: 0px;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+}
+
+#openLawNZListItem-dialog::backdrop {
+    background: rgba(0,0,0,0.5);
+}
+
+#openLawNZListItem-dialog p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#openLawNZListItem-dialog table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+#openLawNZListItem-dialog table th {
+    text-align: left;
+    padding: 5px;
+    border: 2px solid #dbe5f6;
+    background: #d9dce6;
+    font-weight: bold;
+}
+
+#openLawNZListItem-dialog table td {
+    padding: 5px;
+    border: 2px solid #dbe5f6;
+}
+
+#openLawNZListItem-dialog-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e6f0f7;
+    padding: 8px;
+    line-height: 1;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#openLawNZListItem-dialog-close:hover {
+    background: #dbe5f6;
+}
