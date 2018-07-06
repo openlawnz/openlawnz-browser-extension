@@ -1,4 +1,4 @@
-# openlawnz-api
+# openlawnz-browser-extension
 
 ## Install
 
