@@ -134,9 +134,19 @@
     background: rgba(0,0,0,0.5);
 }
 
+#openLawNZListItem-dialog-wrap {
+    position: relative;
+    z-index: 1;
+}
+
 #openLawNZListItem-dialog p {
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+p#openLawNZListItem-dialog-no-results {
+    font-size: 12px;
+    color: #333;
 }
 
 #openLawNZListItem-dialog table {
@@ -172,4 +182,22 @@
 
 #openLawNZListItem-dialog-close:hover {
     background: #dbe5f6;
+}
+
+#openLawNZListItem-powered-by {
+    margin-top: 50px;
+    color: #333;
+    text-align: center;
+}
+
+#openLawNZListItem-powered-by p {
+    font-size: 12px;
+}
+
+#openLawNZListItem-powered-by a {
+    display: block;
+}
+
+#openLawNZListItem-powered-by svg {
+    height: 40px;
 }
