@@ -48,27 +48,27 @@ if(section) {
             
             // TODO: A better graphql query that has the section as a parameter rather than filtering
             let tableData = response.data.legislation.caseReferences.filter(data => data.section == section)
-            dialogContent.innerHTML = '<p>Case references for this section</p>'
+            dialogContent.innerHTML = '<p id="openLawNZListItem-header">Cases that refer to this section</p>'
             if(tableData.length > 0) {
                 dialogContent.innerHTML += `
                 
                 <table>
                     <thead>
                         <tr>
-                            <th>Case name</th>
-                            <th>Citation</th>
-                            <th>Legislation Section</th>
-                            <th>Reference count</th>
+                            <th id="case_name_col_head">Case name</th>
+                            <th id="case_citation_col_head">Citation</th>
+                            
+                            <th id="count_col_head">Count</th>
                         </tr>
                     </thead>
                     <tbody>
                     ${tableData.map(caseReference => {
 
                         return `<tr>
-                            <td><a href="https://www.openlaw.nz/case/${caseReference.case_id}" target="_blank" rel="noopener">${caseReference.case.case_name}</a></td>
-                            <td>${caseReference.case.citations[0].citation}</td>
-                            <td>${caseReference.section}</td>
-                            <td>${caseReference.count}</td>
+                            <td id="case_name"><a href="https://www.openlaw.nz/case/${caseReference.case_id}" target="_blank" rel="noopener">${caseReference.case.case_name}</a></td>
+                            <td id="case_citation">${caseReference.case.citations[0].citation}</td>
+                            
+                            <td id="count">${caseReference.count}</td>
                         </tr>`
                     })}
                         
@@ -77,6 +77,8 @@ if(section) {
                 
                 </div>
             `
+            // <th id="section_col_head">Section</th>
+            // <td id="section">${caseReference.section}</td>
             } else {
                 dialogContent.innerHTML += `<p id="${openLawDialog.id}-no-results">No results found</p>`
             }
