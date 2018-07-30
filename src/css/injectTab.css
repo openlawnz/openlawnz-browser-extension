@@ -117,7 +117,12 @@ dark 006878
     border: 1px solid #006878;
     padding: 10px;
     min-width: 450px;
+    max-width: 60%;
+    width: 80%;
     min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
     background: #eeeef6;
     font-size: 12px;
@@ -168,7 +173,7 @@ p#openLawNZListItem-header {
 
 #openLawNZListItem-dialog table th {
     text-align: left;
-    padding: 5px;
+    padding: 9px;
     border: 2px solid #ddd;
     background: #ddd;
     font-weight: bold;
@@ -188,9 +193,10 @@ p#openLawNZListItem-header {
     text-align: right;
 }
 
-td#case_name {
+#openLawNZListItem-dialog td.case_name {
     min-width: 150px;
     max-width: 200px;
+    padding: 9px 9px;
 }
 
 #openLawNZListItem-dialog-close {

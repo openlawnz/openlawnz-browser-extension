@@ -50,27 +50,30 @@ if(section) {
             let tableData = response.data.legislation.caseReferences.filter(data => data.section == section)
             dialogContent.innerHTML = '<p id="openLawNZListItem-header">Cases that refer to this section</p>'
             if(tableData.length > 0) {
+
+                const tbody = tableData.map(caseReference => {
+
+                    return `<tr>
+                        <td class="case_name"><a href="https://www.openlaw.nz/case/${caseReference.case_id}" target="_blank" rel="noopener">${caseReference.case.case_name}</a></td>
+                        <td class="case_citation">${caseReference.case.citations[0].citation}</td>
+                        
+                        <td class="count">${caseReference.count}</td>
+                    </tr>`
+                }).join('')
+
                 dialogContent.innerHTML += `
                 
                 <table>
                     <thead>
                         <tr>
-                            <th id="case_name_col_head">Case name</th>
-                            <th id="case_citation_col_head">Citation</th>
+                            <th class="case_name_col_head">Case name</th>
+                            <th class="case_citation_col_head">Citation</th>
                             
-                            <th id="count_col_head">Count</th>
+                            <th class="count_col_head">Count</th>
                         </tr>
                     </thead>
                     <tbody>
-                    ${tableData.map(caseReference => {
-
-                        return `<tr>
-                            <td id="case_name"><a href="https://www.openlaw.nz/case/${caseReference.case_id}" target="_blank" rel="noopener">${caseReference.case.case_name}</a></td>
-                            <td id="case_citation">${caseReference.case.citations[0].citation}</td>
-                            
-                            <td id="count">${caseReference.count}</td>
-                        </tr>`
-                    })}
+                    ${tbody}
                         
                     </tbody>
                 </table>
