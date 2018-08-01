@@ -1,7 +1,7 @@
 {
 	"content_scripts": [
 		{
-			"matches": ["http://legislation.govt.nz/act/private/*", "http://legislation.govt.nz/act/public/*"],
+			"matches": ["http://legislation.govt.nz/act/private/*", "http://legislation.govt.nz/act/public/*", "http://www.legislation.govt.nz/act/public/*", "http://www.legislation.govt.nz/act/private/*"],
 			"js": ["injectTab.js"],
 			"css": ["injectTab.css"]
 		}
