@@ -55,7 +55,7 @@ if(section) {
 
                     return `<tr>
                         <td class="case_name"><a href="https://www.openlaw.nz/case/${caseReference.case_id}" target="_blank" rel="noopener">${caseReference.case.case_name}</a></td>
-                        <td class="case_citation">${caseReference.case.citations[0].citation}</td>
+                        <td class="case_citation">${caseReference.case.citations.length >0 ? caseReference.case.citations[0].citation : "Unknown"}</td>
                         
                         <td class="count">${caseReference.count}</td>
                     </tr>`
