@@ -108,7 +108,7 @@ if(section) {
 const formatQuery = (legislationTitle) => {
 
     return `{ 
-        legislation(title: "'${legislationTitle}'") { 
+        legislation(title: "${legislationTitle}") { 
             caseReferences { 
                 case_id,
                 count,
