@@ -1,8 +1,0 @@
-{
-	"content_scripts": [
-		{
-			"matches": ["http://legislation.govt.nz/act/private/*", "http://legislation.govt.nz/act/public/*", "http://www.legislation.govt.nz/act/public/*", "http://www.legislation.govt.nz/act/private/*"],
-			"js": ["injectLiveReload.js"]
-		}
-	]
-}
