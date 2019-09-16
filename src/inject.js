@@ -108,7 +108,7 @@ if (section) {
 
 				dialogContent.innerHTML += `<div id="openLawNZListItem-powered-by">
                 <p>Powered by</p>
-                <a href="https://api.openlaw.nz" target="_blank" rel="noopener">OpenLaw NZ Free API
+                <a href="https://www.openlaw.nz" target="_blank" rel="noopener">OpenLaw NZ Free API
                 </a>`;
 			});
 		});
