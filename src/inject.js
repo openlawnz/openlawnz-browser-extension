@@ -78,7 +78,7 @@ if (section) {
 			}
 		}).then(response => {
 			response.json().then(response => {
-				let tableData = response.data.getLegistlationByTitle.legislationToCases.sort(
+				let tableData = response.data.getLegislationByTitle.legislationToCases.sort(
 					(a, b) => b.case.extractionConfidence - a.case.extractionConfidence
 				);
 				dialogContent.innerHTML = '<p id="openLawNZListItem-header">Cases that refer to this section</p>';
@@ -119,7 +119,7 @@ if (section) {
 
 const formatQuery = (legislationTitle, section) => {
 	return `{ 
-		getLegistlationByTitle(_title: "${legislationTitle}") {
+		getLegislationByTitle(_title: "${legislationTitle}") {
 			legislationToCases(condition: {section: "${section}"}) {
 				caseId,
 				count,
