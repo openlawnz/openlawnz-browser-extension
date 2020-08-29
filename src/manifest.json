@@ -8,7 +8,7 @@
 		"16": "logo.png",
 		"128": "logo.png"
 	},
-	"permissions": ["contextMenus", "activeTab"],
+	"permissions": [],
     "web_accessible_resources": [
 		"logo.png"
 	],
