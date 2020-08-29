@@ -24,11 +24,6 @@ function makeRow(data) {
 	count.textContent = data.count;
 	tr.appendChild(count);
 
-	var extraction_confidence = document.createElement("td");
-	extraction_confidence.classList.add("count");
-	extraction_confidence.textContent = (data.case.extractionConfidence / 2) * 100 + "%";
-	tr.appendChild(extraction_confidence);
-
 	return tr;
 }
 
@@ -68,7 +63,7 @@ if (section) {
 	openLawDialog.appendChild(closeDialogButton);
 
 	openLawListItem.onclick = () => {
-		fetch(`https://api.openlaw.nz/graphql`, {
+		fetch(`https://lapi.openlaw.nz/graphql`, {
 			method: "POST",
 			body: JSON.stringify({
 				query: formatQuery(legislationTitle, section)
@@ -78,9 +73,7 @@ if (section) {
 			}
 		}).then(response => {
 			response.json().then(response => {
-				let tableData = response.data.legislation.legislationToCases.sort(
-					(a, b) => b.case.extractionConfidence - a.case.extractionConfidence
-				);
+				let tableData = response.data.legislation.legislationToCases;
 				dialogContent.innerHTML = '<p id="openLawNZListItem-header">Cases that refer to this section</p>';
 				if (tableData.length > 0) {
 					dialogContent.innerHTML += `
@@ -90,7 +83,6 @@ if (section) {
                                 <th class="case_name_col_head">Case name</th>
                                 <th class="case_citation_col_head">Citation</th>
                                 <th class="count_col_head">Count</th>
-                                <th class="extraction_col_head">Confidence</th>
                             </tr>
                         </thead>
                         <tbody id="openLawNZDialog-body"></tbody>
@@ -109,7 +101,8 @@ if (section) {
 				dialogContent.innerHTML += `<div id="openLawNZListItem-powered-by">
                 <p>Powered by</p>
                 <a href="https://www.openlaw.nz" target="_blank" rel="noopener">OpenLaw NZ Free API
-                </a>`;
+				</a>
+				<p id="openlawNZDisclaimer">This data is automatically extracted from PDF files. While OpenLaw NZ makes every effort to provide accurate data, it is not something we can guarantee.</p>`;
 			});
 		});
 
@@ -125,7 +118,6 @@ const formatQuery = (legislationTitle, section) => {
 				count,
 				section,
 				case {
-					extractionConfidence,
 					caseName,
 					caseCitations {
 						citation
