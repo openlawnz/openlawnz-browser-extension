@@ -7,7 +7,7 @@ function makeRow(data) {
 	var case_name = document.createElement("td");
 	case_name.classList.add("case_name");
 	var case_link = document.createElement("a");
-	case_link.setAttribute("href", "https://www.openlaw.nz/case/" + data.caseId);
+	case_link.setAttribute("href", "https://www.openlaw.nz/single-case.html?case=" + data.case.caseCitations[0].id);
 	case_link.setAttribute("target", "_blank");
 	case_link.setAttribute("rel", "noopener");
 	case_link.textContent = data.case.caseName;
@@ -120,7 +120,8 @@ const formatQuery = (legislationTitle, section) => {
 				case {
 					caseName,
 					caseCitations {
-						citation
+						citation,
+						id
 					}
 				}
 			}
