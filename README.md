@@ -2,7 +2,7 @@
 
 1. Go to chrome://extensions
 2. Enable developer mode and load `src` as an unpacked extension
-3. Visit an act on legislation.govt.nz e.g. http://legislation.govt.nz/act/public/1989/0142/latest/DLM195466.html#DLM195466
+3. Visit an act on legislation.govt.nz e.g. http://legislation.govt.nz/act/public/2007/0091/latest/DLM968969.html
 
 ## NOTICE
 
