@@ -65,7 +65,7 @@ if (section) {
 	openLawDialog.appendChild(closeDialogButton);
 
 	openLawListItem.onclick = () => {
-		fetch(`https://lapi.openlaw.nz/graphql`, {
+		fetch(`https://api.openlaw.nz/graphql`, {
 			method: "POST",
 			body: JSON.stringify({
 				query: formatQuery(legislationTitle, section)
