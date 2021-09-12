@@ -8,7 +8,7 @@ function makeRow(data) {
 	var case_name = document.createElement("td");
 	case_name.classList.add("case_name");
 	var case_link = document.createElement("a");
-	var case_url = data.case.caseCitations.length > 0 ? "https://www.openlaw.nz/single-case.html?case=" + data.case.caseCitations[0].id : "";
+	var case_url = data.case.caseCitations.length > 0 ? "https://www.openlaw.nz/case/" + data.case.caseCitations[0].id : "";
 	if( data.case.caseCitations.length > 0) { case_link.setAttribute("href", case_url);}
 	case_link.setAttribute("target", "_blank");
 	case_link.setAttribute("rel", "noopener");
