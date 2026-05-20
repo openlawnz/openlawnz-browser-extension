@@ -1,120 +1,48 @@
-/* Specificity */
-#contentContainer #content div.legislationActions li.contents {
-  width: 188px;
-  margin-right: 50px;
-}
-
 /* logo colours
 light 00ADB7
 dark 006878
 */
 
-/* Specificity */
-#content div.legislationActions li#openLawNZListItem {
-  position: absolute;
-  left: 188px;
-  width: 50px;
-  background-position: 0 -50px;
+/* Per-section OpenLaw button (hidden until the section is hovered or focused) */
+.prov .openlaw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-left: 0.5rem;
+  padding: 0;
+  vertical-align: middle;
+  background: #fff;
+  border: 1px solid #006878;
+  border-radius: 4px;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-#openLawNZListItem:before {
-  position: absolute;
-  top: 0;
-  left: -6px;
-  content: " ";
-  display: block;
-  height: 100%;
-  width: 6px;
-  background: inherit;
-  background-position: -232px -50px;
-  z-index: 2;
+.prov:hover .openlaw-btn,
+.prov:focus-within .openlaw-btn,
+.openlaw-btn:focus,
+.openlaw-btn:hover {
+  opacity: 1;
 }
 
-#openLawNZListItem:after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  content: " ";
-  display: block;
-  height: 100%;
-  width: 42px;
-  background: inherit;
-  background-position: -196px -50px;
-  z-index: 2;
-}
-
-#openLawNZListItem > span {
-  position: absolute;
-  z-index: 3;
-  width: 24px;
-  height: 24px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  background-size: 28px;
-  background-color: #fff;
-  pointer-events: none;
-}
-
-#openLawNZListItem > span:before {
-  position: absolute;
-  z-index: 2;
-  top: -1.85px;
-  left: -1.85px;
-  border-radius: 4px;
-  background: #fff;
-  content: " ";
-  width: 11px;
-  height: 11px;
-  display: block;
-}
-
-#openLawNZListItem > span:after {
-  position: absolute;
-  z-index: 2;
-  bottom: -1.85px;
-  right: -1.85px;
-  border-radius: 4px;
-  background: #fff;
-  content: " ";
-  width: 11px;
-  height: 11px;
-  display: block;
-}
-
-#openLawNZListItem > span > span {
-  position: absolute;
-  z-index: 3;
-  width: 24px;
-  height: 24px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 28px;
-  pointer-events: none;
-}
-
-#content div.legislationActions li.contents:hover + #openLawNZListItem:before {
-  background-position-y: -100px;
-}
-
-#openLawNZListItem:hover,
-#openLawNZListItem:hover:after {
-  background-position-y: -100px !important;
-}
-
-#openLawNZListItem:hover span,
-#openLawNZListItem:hover span:after,
-#openLawNZListItem:hover span:before {
+.openlaw-btn:hover {
   background-color: #d9dce64e;
-  mix-blend-mode: multiply;
 }
 
+.openlaw-btn__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  pointer-events: none;
+}
+
+/* Dialog */
 #openLawNZListItem-dialog {
   border: 1px solid #006878;
   padding: 10px;
@@ -125,9 +53,10 @@ dark 006878
   max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
-  position: absolute;
+  position: fixed;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #eeeef6;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
@@ -143,6 +72,7 @@ dark 006878
   left: 0px;
   width: calc(100% - 3px);
   height: calc(100% - 3px);
+  pointer-events: none;
 }
 
 #openLawNZListItem-dialog::backdrop {
@@ -183,7 +113,7 @@ p#openLawNZListItem-header {
   font-weight: bold;
 }
 
-#openLawNZListItem-dialog table th#count_col_head {
+#openLawNZListItem-dialog table th.count_col_head {
   text-align: right;
 }
 
@@ -192,8 +122,7 @@ p#openLawNZListItem-header {
   border: 2px solid #ddd;
 }
 
-#section,
-#count {
+#openLawNZListItem-dialog td.count {
   text-align: right;
 }
 
@@ -236,5 +165,4 @@ p#openLawNZListItem-header {
 
 #openlawNZDisclaimer {
   margin-top: 15px;
-  
 }
